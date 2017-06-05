@@ -1,0 +1,100 @@
+@import "variables.scss";
+
+.clearfix::after {
+   content: " ";
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+.row {
+  min-height: 100px !important;
+}
+
+.col {
+  border: 1px dashed green;
+  min-height: 100px !important;
+  overflow: auto;
+  padding: 0px !important;
+
+}
+
+.s4 {
+  min-height: 100px !important;
+}
+
+.color-swatch {
+  width: 100%;
+  height: 100px !important;
+}
+
+// .color-1 {
+//   background-color: $color1;
+// }
+//
+// .color-2 {
+//   background-color: $color2;
+// }
+//
+// .color-3 {
+//   background-color: $color3;
+// }
+//
+// .color-4 {
+//   background-color: $color4;
+// }
+
+p {
+  width: 100%;
+}
+
+
+@each $key, $value in $colors {
+
+  .#{$key} {
+    background-color: $value;
+
+    .swatch1 {
+      background-color: lighten($value, 20%);
+    }
+    .swatch3 {
+      background-color: darken($value, 20%);
+    }
+
+
+  }
+  .color-1-#{$key} {
+    background-color: mix($color1, $value, 35%);
+  }
+  .color-2-#{$key} {
+    background-color: mix($color2, $value, 35%);
+  }
+  .color-3-#{$key} {
+    background-color: mix($color3, $value, 35%);
+  }
+  .color-4-#{$key} {
+    background-color: mix($color4, $value, 35%);
+  }
+
+
+
+}
+
+// @while $n < 16 {
+//   $n:1;
+//   .subgenerated#{$n} {
+//     background-color: mix($color1, $color2, 35%);
+//   }
+// }
+//
+// .subgenerated5 {
+//   background-color: mix($color1, $color2, 35%);
+// }
+
+
+
+
+
+// .color-section > div > div:nth-child(2) > div {
+//
+// }
